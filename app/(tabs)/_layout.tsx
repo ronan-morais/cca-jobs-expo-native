@@ -1,35 +1,22 @@
-import { Tabs } from 'expo-router';
-import React from 'react';
-
-import { HapticTab } from '@/components/haptic-tab';
-import { IconSymbol } from '@/components/ui/icon-symbol';
-import { Colors } from '@/constants/theme';
-import { useColorScheme } from '@/hooks/use-color-scheme';
+import { HStack } from "@/components/ui/hstack";
+import { VStack } from "@/components/ui/vstack";
+import { Slot } from "expo-router";
+import React from "react";
+import Sidebar from "../sidebar";
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
   return (
-    <Tabs
-      screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        headerShown: false,
-        tabBarButton: HapticTab,
-      }}>
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
-        }}
-      />
-      <Tabs.Screen
-        name="explore"
-        options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
-        }}
-      />
-    </Tabs>
+    <HStack className="gap-3 h-full p-5">
+      <VStack
+        className="p-6 hidden w-full max-w-60 rounded-md lg:flex md:col-span-3 xl:col-span-2"
+      >
+        <Sidebar />
+      </VStack>
+      <VStack
+        className="w-full bg-background-50 p-6 rounded-md col-span-12 md:col-span-9 xl:col-span-10"
+      >
+        <Slot />
+      </VStack>
+    </HStack>
   );
 }
