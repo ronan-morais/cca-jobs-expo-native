@@ -37,7 +37,7 @@ cssInterop(PrimitiveIcon, {
 });
 
 const buttonStyle = tva({
-  base: 'group/button rounded bg-primary-500 flex-row items-center justify-center data-[focus-visible=true]:web:outline-none data-[focus-visible=true]:web:ring-2 data-[disabled=true]:opacity-40 gap-2',
+  base: 'group/button rounded bg-primary-500 flex-row items-center justify-center data-[focus-visible=true]:web:outline-none data-[focus-visible=true]:web:ring-2 u-outline-opacity-50 data-[disabled=true]:opacity-40 gap-2',
   variants: {
     action: {
       primary:
@@ -174,25 +174,25 @@ const buttonTextStyle = tva({
       variant: 'outline',
       action: 'primary',
       class:
-        'text-primary-500 data-[hover=true]:text-primary-500 data-[active=true]:text-primary-500',
+        'text-primary-500 data-[active=true]:text-primary-500 u-button-text-on-white',
     },
     {
       variant: 'outline',
       action: 'secondary',
       class:
-        'text-typography-500 data-[hover=true]:text-primary-600 data-[active=true]:text-typography-700',
+        'text-typography-500 data-[active=true]:text-typography-700 u-button-text-on-white',
     },
     {
       variant: 'outline',
       action: 'positive',
       class:
-        'text-primary-500 data-[hover=true]:text-primary-500 data-[active=true]:text-primary-500',
+        'text-primary-500 data-[active=true]:text-primary-500 u-button-text-on-white',
     },
     {
       variant: 'outline',
       action: 'negative',
       class:
-        'text-primary-500 data-[hover=true]:text-primary-500 data-[active=true]:text-primary-500',
+        'text-primary-500 data-[active=true]:text-primary-500 u-button-text-on-white',
     },
   ],
 });

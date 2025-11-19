@@ -8,7 +8,7 @@ export default function TabLayout() {
   return (
     <HStack className="gap-3 h-full p-5">
       <VStack
-        className="p-6 hidden w-full max-w-60 rounded-md lg:flex md:col-span-3 xl:col-span-2"
+        className="p-6 hidden w-full max-w-60 rounded-md lg:flex md:col-span-3 xl:col-span-2 h-full"
       >
         <Sidebar />
       </VStack>

@@ -1,3 +1,39 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Base form element theming to avoid default white backgrounds */
+input,
+textarea,
+select {
+  background-color: rgb(var(--color-background-50));
+  color: rgb(var(--color-typography-900));
+}
+
+.dark input,
+.dark textarea,
+.dark select {
+  background-color: rgb(var(--color-background-50));
+  color: rgb(var(--color-typography-950));
+}
+
+/* Placeholder color aligned with theme */
+input::placeholder,
+textarea::placeholder {
+  color: rgb(var(--color-typography-600));
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: rgb(var(--color-typography-400));
+}
+
+@layer utilities {
+  .u-outline-opacity-50 {
+    @apply ring-opacity-50 focus:ring-opacity-50 hover:ring-opacity-50;
+  }
+
+  .u-button-text-on-white {
+    @apply text-[#000000] data-[hover=true]:text-[#000000] data-[focus-visible=true]:web:text-[#000000];
+  }
+}
